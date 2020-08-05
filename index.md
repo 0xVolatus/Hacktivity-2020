@@ -32,6 +32,8 @@ Since this is a .png file, it is likely that there are some hidden texts in the 
 
 ![Flag Visible](RedPlane.png)
 
+---
+
 ### Cold War
 flag{do_not_use_merriam_webster}
 
@@ -45,6 +47,8 @@ Using ```stegsnow```, a tool to decode whitespace steganography, we were able to
 
 ![Flag Extracted](Stegsnow.png)
 
+---
+
 ### Chess Cheater
 flag: ARCANGELORICCIARDI (not in standard flag format)
 
@@ -53,6 +57,8 @@ flag: ARCANGELORICCIARDI (not in standard flag format)
 This one was pretty simple. The file provided to us was titled morse.wav, therefore we can deduce that it was morse code. Using an online [morse code audio decoder](https://morsecode.world/international/decoder/audio-decoder-adaptive.html), we find out that the flag is ARCANGELORICCIARDI.
 
 ![Decoded Morse Audio](MorseDecoded.png)
+
+---
 
 ### Busted
 flag{compress_embedded_data}
@@ -66,6 +72,8 @@ I first used the ```file``` command to inspect the .jpg file. This was the outpu
 Since this is a .jpg file, it is likely that steghide would be able to help extract the flag. Assuming that the comment is the password for the file, I inputted the .jpg file into ```steghide``` and added the password which successfully retrieved the flag.
 
 ![Steghide Output](SteghideOutput.png)
+
+---
 
 ### Unsubscribe
 flag{hidden_message_in_spam}
@@ -96,7 +104,25 @@ I did some digging around the machine and there was no other file that could pot
 ---
 
 ### Caeser Mirror
+flag{julius_in_a_reflection}
 
+![Caeser Mirror](CaeserMirror.png)
+
+From the name of the challenge, it is possible to guess that the challenge will be regarding Caeser Cipher and also some reversing of texts. Unfortunately, I forgot to take a screenshot of the original file :(
+
+I copied the text from the file and threw it into a [Caeser Cipher Decoder](https://cryptii.com/pipes/caesar-cipher). I played around with the key for a bit and found one that made sense: a > n
+
+![Caeser Output](CaeserOutput.png)
+
+As you can see, some of the text is reversed. In order to make sense of the entire chunk of text, we will need to unreverse those portions (which I did manually and gave up once I got the last part of the flag...)
+
+```
+As we can see, some of the texts are reversed. So we need to unreversed those portions to reveal the whole text. Here is an extract:
+
+Oh boy! Wow, this warmup challenge was a lot of fun to put together! I so definitely always love trying to think up new and innovative things to do with the very basic, common and classic CTF technniques! The first part of your flag is flag{julius_ and that is a great start but it is not everything that you will need to solve this challenge. I don’t like trying to hide and separate each part of the flag. The second part of the flag is _in_a but you do need just a little bit more. What exactly should we include here to try and make this filler text look more engaging and worthwhile? Should we add newlines? Should we add spaces and try and make it symmetrical? How many lines is enough to make this filler text look believable? A solid square of letters within a simple, monospace-font text file looks good enough to me. Are we almost at the end? It looks like it! I hope it is good. He third part of your flag is reflection}…
+```
+
+---
 
 ### Common Place
 flag{rfc5785_defines_yet_another_common_place}
@@ -113,12 +139,16 @@ I navigated to the /.well-known directory and sure enough, we were presented wit
 
 ![Rfc5785 Directory](rfc5785Dir.png)
 
+---
+
 ### InternetCattos
 flag{this_netcat_says_meow}
 
 I think I may have accidentally solved this. All I did was open up the link in FireFox, and the flag was staring back at me. Apparently, according to a friend, Chrome was not able to view this. Somehow, FireFox has some magical powers ಠ_ಠ
 
 ![Netcat](Netcat.png)
+
+---
 
 ### Hexgedit
 flag{optical_hexadecimal_recognition_amirite}
@@ -128,6 +158,8 @@ flag{optical_hexadecimal_recognition_amirite}
 I... Actually manually did this challenge. It was painful, but I managed to translate all the hex, only to realize that the flag was at the bottom (;﹏;)
 
 ![Hexgedit Image](HexgeditImg.png)
+
+---
 
 ### Vencryption
 flag{sometimes_it_really_do_be_like_that_tho}
